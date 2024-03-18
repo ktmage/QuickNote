@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="QuickNote.View.UserControls.ModeSelectorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuickNote.View.UserControls"
+             xmlns:util="clr-namespace:QuickNote.Util"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Button
+            Margin="0,10,0,0"
+            Width="40" Height="40" Content="Writer"
+            Command="{Binding SetModeCommand}" CommandParameter="Writer">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Grid>
+                            <Border x:Name="border" Background="{x:Static util:Pallet.AccentColor_6}" CornerRadius="10">
+                                <TextBlock x:Name="textBox" Text="W" FontSize="20" FontWeight="Bold" 
+                                           Foreground="{x:Static util:Pallet.Light_6}"
+                                           VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="{x:Static util:Pallet.AccentColor_4}"/>
+                                <Setter TargetName="textBox" Property="Foreground" Value="{x:Static util:Pallet.Light_2}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button
+            Margin="0,10,0,0"
+            Width="40" Height="40" Content="Viewer"
+            Command="{Binding SetModeCommand}" CommandParameter="Viewer">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Grid>
+                            <Border x:Name="border" Background="{x:Static util:Pallet.AccentColor_6}" CornerRadius="10">
+                                <TextBlock x:Name="textBox" Text="V" FontSize="20" FontWeight="Bold" 
+                                           Foreground="{x:Static util:Pallet.Light_6}"
+                                           VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="{x:Static util:Pallet.AccentColor_4}"/>
+                                <Setter TargetName="textBox" Property="Foreground" Value="{x:Static util:Pallet.Light_2}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button 
+            Margin="0,10,0,0"
+            Width="40" Height="40" Content="Setting"
+            Command="{Binding SetModeCommand}" CommandParameter="Setting">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Grid>
+                            <Border x:Name="border" Background="{x:Static util:Pallet.AccentColor_6}" CornerRadius="10">
+                                <TextBlock x:Name="textBox" Text="S" FontSize="20" FontWeight="Bold" 
+                                           Foreground="{x:Static util:Pallet.Light_6}"
+                                           VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="{x:Static util:Pallet.AccentColor_4}"/>
+                                <Setter TargetName="textBox" Property="Foreground" Value="{x:Static util:Pallet.Light_2}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="QuickNote.View.UserControls.NoteFormatTool.NormalForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuickNote.View.UserControls.NoteFormatTool"
+             xmlns:customControl="clr-namespace:QuickNote.Util.CustomControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Util/Style/RoundCornerPlaceholder.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid x:Name="WrapGrid">
+        <customControl:PlaceholderTextBox x:Name="Form" Style="{StaticResource RoundCornerPlaceholderStyle}" TextWrapping="Wrap" AcceptsReturn="True"/>
+    </Grid>
+</UserControl>

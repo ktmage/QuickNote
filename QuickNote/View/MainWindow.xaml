@@ -1,0 +1,116 @@
+﻿<Window x:Class="QuickNote.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuickNote.View"
+        xmlns:util="clr-namespace:QuickNote.Util"
+        mc:Ignorable="d"
+        Title="Main" Width="960" Height="540">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Util/Style/RoundCornerPlaceholder.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+
+    <Grid>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="60"/>
+    </Grid.ColumnDefinitions>
+
+        <!--Content-->
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--Header-->
+            <Grid x:Name="HeaderGrid"
+                Grid.Row="0" Background="{x:Static util:Pallet.MainColor_5}">
+                <ContentControl Content="{Binding TopContent}" />
+            </Grid>
+
+            <!--Content-->
+            <Grid x:Name="ContentGrid"
+                Grid.Row="1" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" MinWidth="360"/>
+                    <ColumnDefinition Width="2*" MinWidth="300"/>
+                </Grid.ColumnDefinitions>
+
+                <!--LeftContent-->
+                <Grid x:Name="LeftContentGrid"
+                    Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+
+                    <!--UpperContent-->
+                    <Grid x:Name="LeftUpperContentGrid"
+                        Grid.Row="0" Background="{x:Static util:Pallet.MainColor_9}">
+                        <ContentControl Content="{Binding LeftUpperContent}" />
+                    </Grid>
+
+                    <!--LowerContent-->
+                    <Grid x:Name="LeftLowerContentGrid"
+                        Grid.Row="1" Background="{x:Static util:Pallet.MainColor_8}">
+                        <ContentControl Content="{Binding LeftLowerContent}"/>
+                    </Grid>
+                </Grid>
+
+                <!--MiddleContent-->
+                <Grid x:Name="MiddleContentGrid"
+                    Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+
+                    <!--UpperContent-->
+                    <Grid x:Name="MiddleUpperContentGrid" 
+                          Background="{x:Static util:Pallet.MainColor_7}" Grid.Row="0">
+                        <ContentControl Content="{Binding MiddleUpperContent}"/>
+                    </Grid>
+
+                    <!--LowerContent-->
+                    <Grid x:Name="MiddleLowerContentGrid"
+                        Grid.Row="1" Background="{x:Static util:Pallet.MainColor_6}">
+                        <ContentControl Content="{Binding MiddleLowerContent}"/>
+                    </Grid>
+                </Grid>
+                <GridSplitter Grid.Column="0" Width="5" Background="Transparent"/>
+            </Grid>
+        </Grid>
+        
+        <!--RightContent-->
+        <Grid x:Name="RightContentGrid"
+            Grid.Column="1" Background="{x:Static util:Pallet.MainColor_4}">
+            <ContentControl Content="{Binding RightContent}"/>
+            <!--<StackPanel Orientation="Vertical" Background="{x:Static util:Pallet.MainColor_5}">
+                <Button
+                Margin="0,10,0,0"
+                Width="40" Height="40" Content="Writer"
+                Command="{Binding SetModeCommand}" CommandParameter="Writer"/>
+                <Button
+                Margin="0,10,0,0"
+                Width="40" Height="40" Content="Viewer"
+                Command="{Binding SetModeCommand}" CommandParameter="Viewer"/>
+                <Button 
+                Margin="0,10,0,0"
+                Width="40" Height="40" Content="Setting"
+                Command="{Binding SetModeCommand}" CommandParameter="Setting"/>
+
+                <Button 
+                Margin="0,10,0,0"
+                Width="40" Height="40" Content="テスト" 
+                Command="{Binding TestCommand}"/>
+            </StackPanel>-->
+        </Grid>
+    </Grid>
+</Window>
